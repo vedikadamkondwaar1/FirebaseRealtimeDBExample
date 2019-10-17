@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "787266202025",
+    "firebase_url": "https://fir-realtimedbexample-3ce10.firebaseio.com",
+    "project_id": "fir-realtimedbexample-3ce10",
+    "storage_bucket": "fir-realtimedbexample-3ce10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787266202025:android:4eb7230588aeece3cd3cb8",
+        "android_client_info": {
+          "package_name": "pooja.firebaserealtimedbexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787266202025-3grur3bmdv0n84kje7855kt1i79f56gm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJEaBZm0GDp4yTlyLwVZnMzpQlEWsIoHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787266202025-3grur3bmdv0n84kje7855kt1i79f56gm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
