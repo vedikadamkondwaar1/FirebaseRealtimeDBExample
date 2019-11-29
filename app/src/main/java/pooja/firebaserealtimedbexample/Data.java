@@ -1,17 +1,18 @@
 package pooja.firebaserealtimedbexample;
 
 public class Data {
-    String title, note,date,id;
+    String title, note, date, id, desc;
 
     public Data() {
 
     }
 
-    public Data(String title, String note, String date, String id) {
+    public Data(String title, String note, String date, String id, String desc) {
         this.title = title;
         this.note = note;
         this.date = date;
         this.id = id;
+        this.desc = desc;
     }
 
     public String getTitle() {
@@ -44,5 +45,13 @@ public class Data {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 }

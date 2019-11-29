@@ -27,11 +27,11 @@ public class ViewActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     //Variable for the update and delete operation
-    String u_title, u_note, post_key;
+    String u_title, u_note, post_key, u_desc;
 
 
     //Update Field.....
-    EditText editTextTitleUpdate, editTextNotesUpdate;
+    EditText editTextTitleUpdate, editTextNotesUpdate, editTextDescUpdate;
     Button buttonUpdate, buttonDelete;
 
     @Override
@@ -69,6 +69,11 @@ public class ViewActivity extends AppCompatActivity {
             note_textView.setText(note);
         }
 
+        public void setDesc(String desc) {
+            TextView desc_textView = myview.findViewById(R.id.desc);
+            desc_textView.setText(desc);
+        }
+
         public void setdate(String date) {
             TextView date_textView = myview.findViewById(R.id.date);
             date_textView.setText(date);
@@ -83,6 +88,7 @@ public class ViewActivity extends AppCompatActivity {
             protected void populateViewHolder(MyViewHolder viewHolder, final Data model, final int position) {
                 viewHolder.setTitle(model.getTitle());
                 viewHolder.setNote(model.getNote());
+                viewHolder.setDesc(model.getDesc());
                 viewHolder.setdate(model.getDate());
                 viewHolder.myview.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -91,6 +97,7 @@ public class ViewActivity extends AppCompatActivity {
                         post_key = getRef(position).getKey();
                         u_title = model.getTitle();
                         u_note = model.getNote();
+                        u_desc = model.getDesc();
                         updatedata();
                     }
                 });
@@ -120,11 +127,15 @@ public class ViewActivity extends AppCompatActivity {
         //Update
         editTextTitleUpdate = udialogView.findViewById(R.id.edit_Title_update);
         editTextNotesUpdate = udialogView.findViewById(R.id.edit_Notes_update);
+        editTextDescUpdate = ualertDialog.findViewById(R.id.edit_Desc_update);
         editTextTitleUpdate.setText(u_title);
         editTextTitleUpdate.setSelection(u_title.length());
 
         editTextNotesUpdate.setText(u_note);
         editTextNotesUpdate.setSelection(u_title.length());
+
+        editTextDescUpdate.setText(u_desc);
+        editTextDescUpdate.setSelection(u_desc.length());
 
         buttonDelete = udialogView.findViewById(R.id.btn_del);
         buttonUpdate = udialogView.findViewById(R.id.btn_Update);
@@ -135,9 +146,10 @@ public class ViewActivity extends AppCompatActivity {
 
                 u_title = editTextTitleUpdate.getText().toString().trim();
                 u_note = editTextNotesUpdate.getText().toString().trim();
+                u_desc = editTextDescUpdate.getText().toString().trim();
 
                 String uDate = DateFormat.getDateInstance().format(new Date());
-                Data udata = new Data(u_title, u_note, uDate, post_key);
+                Data udata = new Data(u_title, u_note, uDate, post_key,u_desc);
                 databaseReference.child(post_key).setValue(udata);
                 ualertDialog.dismiss();
             }

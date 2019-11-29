@@ -18,7 +18,7 @@ import java.util.Date;
 
 public class Activity_UI extends AppCompatActivity {
     Button btnsave;
-    EditText e_title, e_notes;
+    EditText e_title, e_notes, e_desc;
 
     public static String test="your task app";
     static String uid="Testing";
@@ -36,6 +36,7 @@ public class Activity_UI extends AppCompatActivity {
         databaseReference.keepSynced(true);
         e_title=findViewById(R.id.edit_Title);
         e_notes=findViewById(R.id.edit_Notes);
+        e_desc = findViewById(R.id.edit_Desc);
         btnsave=findViewById(R.id.btn_Save);
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +44,7 @@ public class Activity_UI extends AppCompatActivity {
 
                 String s_title = e_title.getText().toString().trim();
                 String s_notes = e_notes.getText().toString().trim();
+                String s_desc = e_desc.getText().toString().trim();
                 if (TextUtils.isEmpty(s_title)) {
                     e_title.setError("Required Field.. ");
                     return;
@@ -52,9 +54,14 @@ public class Activity_UI extends AppCompatActivity {
                     return;
                 }
 
+                if (TextUtils.isEmpty(s_desc)) {
+                    e_desc.setError("Required Field.. ");
+                    return;
+                }
+
                 String s_id = databaseReference.push().getKey();
                 String s_date = DateFormat.getDateInstance().format(new Date());
-                Data data = new Data(s_title, s_notes, s_date, s_id);
+                Data data = new Data(s_title, s_notes, s_date, s_id,s_desc);
                 if (s_id != null) {
                     databaseReference.child(s_id).setValue(data);
                 }
