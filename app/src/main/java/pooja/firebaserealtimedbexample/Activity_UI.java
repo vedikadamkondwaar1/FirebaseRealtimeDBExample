@@ -21,7 +21,8 @@ public class Activity_UI extends AppCompatActivity {
     EditText e_title, e_notes;
 
     public static String test="your task app";
-    String uid="Testing";
+    static String uid="Testing";
+    String post_key;
     static DatabaseReference databaseReference;
 
 

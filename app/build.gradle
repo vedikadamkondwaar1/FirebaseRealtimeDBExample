@@ -31,6 +31,7 @@ dependencies {
     implementation 'com.firebase:firebase-client-android:2.5.2'
     implementation 'com.google.firebase:firebase-core:17.2.0'
     implementation 'com.firebaseui:firebase-ui-database:2.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
 
 }

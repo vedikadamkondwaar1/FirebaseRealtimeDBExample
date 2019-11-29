@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/toolbar_draw"
+    android:padding="40dp"
+    android:gravity="center"
     android:orientation="vertical"
-android:background="@drawable/btndesign"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/buttonadd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:text="Add Product" />
 
     <Button
-        android:id="@+id/btnadd"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonviewall"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add"
-        />
-
-    <Button
-        android:id="@+id/btnupdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="update"
-         />
-
-    <Button
-        android:id="@+id/butndelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete"
-        />
+        android:layout_margin="40dp"
+        android:text="View All product list" />
 </LinearLayout>

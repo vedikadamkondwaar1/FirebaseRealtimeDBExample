@@ -8,15 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button badd,bupdate,bdelete;
+    Button badd,bViewAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        badd=findViewById(R.id.btnadd);
-        bupdate=findViewById(R.id.btnupdate);
-        bdelete=findViewById(R.id.butndelete);
+        badd=findViewById(R.id.buttonadd);
+        bViewAll=findViewById(R.id.buttonviewall);
 
         badd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,18 +26,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bupdate.setOnClickListener(new View.OnClickListener() {
+        bViewAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,ViewActivity.class);
+                startActivity(intent);
 
             }
         });
 
-        bdelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
     }
 }
